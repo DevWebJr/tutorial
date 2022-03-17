@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-device',
@@ -7,9 +7,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeviceComponent implements OnInit {
 
-  constructor() { }
+  @Input() deviceName!: string;
+
+  isAuth: boolean = false;
+
+  constructor() {
+    setTimeout(
+      () => {
+        this.isAuth = true;
+      }, 4000
+    );
+  }
 
   ngOnInit(): void {
+  }
+
+  onLightUp() {
+    if(this.isAuth) {
+
+    }
+    else {
+
+    }
   }
 
 }
